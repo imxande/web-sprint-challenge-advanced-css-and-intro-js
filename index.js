@@ -235,6 +235,13 @@ console.log();
 console.log(thirdArtistBio);
 
 /* Task 2: There is a typo in your dataset 😱 The 9th artist, Vincent Van Gogh is currently Vincent Van Dough. Use an array method to fix this issue and console.log() to check your work. */
+const vincent = artists.filter((artist) => {
+  if (artist.name === "Vincent van Dough") {
+    return (artist.name = "Vincent Van Gogh");
+  }
+});
+console.log();
+console.log(artists);
 
 /* Task 3: Create a function called `getArtistByIndex` that takes two arguments:
  *     (1) artists array
