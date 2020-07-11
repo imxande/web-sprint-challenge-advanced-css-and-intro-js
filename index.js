@@ -227,12 +227,12 @@ const artists = [
 
 // (1) Name of the first artist (0th index) in the array
 const firstArtist = artists[0].name;
-console.log(firstArtist);
+// console.log(firstArtist);
 
 // (2) Bio of the third artist (2nd index) in the array
 const thirdArtistBio = artists[2].bio;
 console.log();
-console.log(thirdArtistBio);
+// console.log(thirdArtistBio);
 
 /* Task 2: There is a typo in your dataset 😱 The 9th artist, Vincent Van Gogh is currently Vincent Van Dough. Use an array method to fix this issue and console.log() to check your work. */
 const vincent = artists.filter((artist) => {
@@ -241,7 +241,7 @@ const vincent = artists.filter((artist) => {
   }
 });
 console.log();
-console.log(artists);
+// console.log(artists);
 
 /* Task 3: Create a function called `getArtistByIndex` that takes two arguments:
  *     (1) artists array
@@ -253,8 +253,20 @@ console.log(artists);
  */
 function getArtistByIndex(array, index) {
   /* code here */
+  // grab the item at specific index
+  const artist = array[index];
+  const id = array[index].id;
+  const name = array[index].name;
+
+  //  return "The artist at index (specified) is (artist name)"
+  return console.log(`The artist at index ${id} is ${name}.`);
 }
 
+// sanity check
+getArtistByIndex(artists, 8);
+getArtistByIndex(artists, 0);
+getArtistByIndex(artists, 3);
+getArtistByIndex(artists, 2);
 /**
 
 
