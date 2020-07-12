@@ -90,7 +90,7 @@ const artists = [
   {
     id: 8,
     name: "Vincent van Dough",
-    years: "1853 – 1890",
+    years: "1853 - 1890",
     genre: "Post-Impressionism",
     nationality: "Dutch",
     bio:
@@ -263,18 +263,31 @@ function getArtistByIndex(array, index) {
 }
 
 // sanity check
-getArtistByIndex(artists, 8);
-getArtistByIndex(artists, 0);
-getArtistByIndex(artists, 3);
-getArtistByIndex(artists, 2);
+// getArtistByIndex(artists, 8);
+// getArtistByIndex(artists, 0);
+// getArtistByIndex(artists, 3);
+// getArtistByIndex(artists, 2);
 /**
 
 
 /* Task 4: Create a function called get20s() that takes data as an argument and returns an array with names of artists who were born in and died in 20th century (1900-2000) example born in 1901 and died in 1959 - included / born in 1889 and died in 1925 not included - should return ["Salvador Dali", "Frida Kahlo"]*/
 
-function get20s(/* Code here */) {
+function get20s(array) {
   /* Code here */
+  result = [];
+
+  array.forEach((artist) => {
+    const life = artist.years.split("-");
+
+    if (life[0] > 1900 && life[1] < 2000) {
+      result.push(artist.name);
+    }
+  });
+  return result;
 }
+
+const answer = get20s(artists);
+console.log(answer);
 
 /* Task 5: Create a function called `removeArtist` that takes two arguments:
  *     (1) artists array
