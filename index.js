@@ -287,7 +287,7 @@ function get20s(array) {
 }
 
 const answer = get20s(artists);
-console.log(answer);
+// console.log(answer);
 
 /* Task 5: Create a function called `removeArtist` that takes two arguments:
  *     (1) artists array
@@ -299,8 +299,22 @@ console.log(answer);
  *
  * Note that sucessfully invoking this function multiple times without refreshing your browser will continuously remove artists from the array until there are none left. If you refresh your browser, the data will reset.
  */
-function removeArtist(/*code here*/) {
+function removeArtist(array, index = 0) {
   /* code here */
+
+  shiftLeft(array, index);
+
+  return array.length;
+}
+
+//  function to shifts values to the left
+function shiftLeft(array, index = 0) {
+  for (let i = index; i < array.length; i++) {
+    array[i] = array[i + 1];
+  }
+  delete array[array.length - 1];
+
+  array.length--;
 }
 
 /**
